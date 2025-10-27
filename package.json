@@ -4,11 +4,11 @@
   "private": true,
   "type": "module",
   "scripts": {
-    "dev": "vite",
-    "build": "vite build",
-    "preview": "vite preview",
-    "start": "vite preview --port $PORT"
-  },
+  "dev": "vite",
+  "build": "chmod +x node_modules/.bin/vite && vite build || vite build",
+  "preview": "vite preview",
+  "start": "vite preview --port $PORT"
+},
   "dependencies": {
     "@heroicons/react": "^2.1.5",
     "axios": "^1.7.7",
