@@ -196,10 +196,8 @@ export default function App() {
       if (controllerRef.current) controllerRef.current.abort();
       controllerRef.current = new AbortController();
 
-      const res = await axios.get(API_URL, {
-        params,
-        signal: controllerRef.current.signal,
-      });
+      const res = await axios.get("/api/news", { params: { query, category, page } });
+
 
       const newArticles = res.data?.articles || [];
       setArticles((prev) => (reset ? newArticles : [...prev, ...newArticles]));
